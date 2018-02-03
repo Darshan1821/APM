@@ -8,7 +8,7 @@ import { ProductService } from './product.service';
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css']
 })
-export class ProductDetailComponent implements OnInit{
+export class ProductDetailComponent implements OnInit {
 
   pageTitle: string = 'Product Detail';
   errorMessage: string;
@@ -19,7 +19,7 @@ export class ProductDetailComponent implements OnInit{
     private _productService: ProductService) {
   }
 
-  ngOnInit(){
+  ngOnInit() {
     const param = this._route.snapshot.paramMap.get('id');
     if (param) {
       const id = +param;
@@ -33,7 +33,7 @@ export class ProductDetailComponent implements OnInit{
       error => this.errorMessage = <any>error);
   }
 
-  onBack(): void{
+  onBack(): void {
     this._router.navigate(['/products']);
   }
 }
